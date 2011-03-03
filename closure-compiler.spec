@@ -1,16 +1,15 @@
 # TODO
 # - build from source
-# - NOTE: build-data.properties is included twice in .jar
 
 %include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
 Name:		closure-compiler
-Version:	20100201
-Release:	0.1
+Version:	20110119
+Release:	1
 License:	Apache v2.0
 Group:		Applications/WWW
 Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
-# Source0-md5:	71bb4f8975ffc81fd0b9a82e18318a49
+# Source0-md5:	1e88d14026e63051df2aa3a89c9efcf3
 Source1:	%{name}.sh
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
@@ -19,12 +18,13 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Closure Compiler is a JavaScript optimizing compiler. It parses your
-JavaScript, analyzes it, removes dead code and rewrites and minimizes
-what's left. It also checks syntax, variable references, and types,
-and warns about common JavaScript pitfalls. It is used in many of
-Google's JavaScript apps, including Gmail, Google Web Search, Google
-Maps, and Google Docs.
+The Closure Compiler is a tool for making JavaScript download and run
+faster. It is a true compiler for JavaScript. Instead of compiling
+from a source language to machine code, it compiles from JavaScript to
+better JavaScript. It parses your JavaScript, analyzes it, removes
+dead code and rewrites and minimizes what's left. It also checks
+syntax, variable references, and types, and warns about common
+JavaScript pitfalls.
 
 %prep
 %setup -qc
