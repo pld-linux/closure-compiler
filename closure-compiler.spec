@@ -11,6 +11,7 @@ License:	Apache v2.0
 Group:		Applications/WWW
 Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
 # Source0-md5:	71bb4f8975ffc81fd0b9a82e18318a49
+Source1:	%{name}.sh
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -28,15 +29,10 @@ Maps, and Google Docs.
 %prep
 %setup -qc
 
-cat <<'EOF' >> %{name}
-#!/bin/sh
-exec java -jar %{_javadir}/%{name}.jar "$@"
-EOF
-
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_javadir}}
-install -p %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -p %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/%{name}
 
 # jars
 cp -a compiler.jar $RPM_BUILD_ROOT%{_javadir}/%{name}-%{version}.jar
