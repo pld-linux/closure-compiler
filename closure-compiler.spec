@@ -1,5 +1,5 @@
 # TODO
-# - build from source
+# - build from source (get-source.sh fetches it)
 
 %include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
@@ -11,6 +11,7 @@ Group:		Applications/WWW
 Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
 # Source0-md5:	815d453b7c51657241d11307231a4037
 Source1:	%{name}.sh
+Source2:	get-source.sh
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
