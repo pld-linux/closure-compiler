@@ -5,6 +5,7 @@ svn=http://$p.googlecode.com/svn/trunk
 dl=https://code.google.com/p/$p/downloads/list?can=3
 
 set -x
+set -e
 
 html() {
 	if [ -z "$html" ]; then
@@ -13,8 +14,11 @@ html() {
 	echo "$html"
 }
 
-rev=$(html | perl -nne '/'$fn'-latest.tar.gz.*Build at r(\d+)/and print $1')
-date=$(html | perl -ne '/'$fn'-(\d+).tar.gz.*Build at r'$rev'/and print $1')
+rev=$(html | perl -ne '/'$fn'-.+tar.*Buil[dt] at r?(\d+)/and print $1')
+test -n "$rev"
+
+date=$(html | perl -ne '/'$fn'-(\d+).tar.gz.*Built at r?'$rev'/and print $1')
+test -n "$date"
 
 d=$p-$date
 if [ ! -d "$d" ]; then
