@@ -4,13 +4,13 @@
 %include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
 Name:		closure-compiler
-Version:	20111114
+Version:	20120123
 Release:	1
 License:	Apache v2.0
 Group:		Applications/WWW
 # Source0Download: https://code.google.com/p/closure-compiler/downloads/list
 Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
-# Source0-md5:	fb176781e26b0de088777db9f88dcc05
+# Source0-md5:	1e23c299c8a8d0fa1f812ea8743bddcc
 Source1:	%{name}.sh
 Source2:	get-source.sh
 URL:		http://closure-compiler.appspot.com/

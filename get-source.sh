@@ -11,13 +11,13 @@ html() {
 	if [ -z "$html" ]; then
 		html=$(lynx -width 1200 -dump -nolist "$dl")
 	fi
-	echo "$html"
+	echo "$html" | tee debug.log
 }
 
-rev=$(html | perl -ne '/'$fn'-.+tar.*Buil[dt] at r?(\d+)/and print $1')
+rev=$(html | perl -ne '/'$fn'-.+tar.*Buil[dt] at r?(\d+)/and print $1 and exit')
 test -n "$rev"
 
-date=$(html | perl -ne '/'$fn'-(\d+).tar.gz.*Built at r?'$rev'/and print $1')
+date=$(html | perl -ne '/'$fn'-(\d+).tar.gz.*Buil[dt] at r?'$rev'/and print $1')
 test -n "$date"
 
 d=$p-$date
