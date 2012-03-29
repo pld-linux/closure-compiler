@@ -4,16 +4,17 @@
 %include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
 Name:		closure-compiler
-Version:	20120123
+Version:	20120305
 Release:	1
 License:	Apache v2.0
 Group:		Applications/WWW
 # Source0Download: https://code.google.com/p/closure-compiler/downloads/list
 Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
-# Source0-md5:	1e23c299c8a8d0fa1f812ea8743bddcc
+# Source0-md5:	513344df6f18bfa00b17f034cabf897d
 Source1:	%{name}.sh
 Source2:	get-source.sh
 Source3:	gen-changes.sh
+Source4:	Changes
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
 BuildRequires:	rpmbuild(macros) >= 1.300
@@ -31,6 +32,7 @@ JavaScript pitfalls.
 
 %prep
 %setup -qc
+cp -p %{SOURCE4} .
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -46,6 +48,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc README Changes
 %attr(755,root,root) %{_bindir}/%{name}
 %{_javadir}/*.jar
