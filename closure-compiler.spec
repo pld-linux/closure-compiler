@@ -13,7 +13,6 @@ Source0:	http://closure-compiler.googlecode.com/files/compiler-%{version}.tar.gz
 # Source0-md5:	7b7b88cb8237f43e263b3583f8a7ea5d
 Source1:	%{name}.sh
 Source2:	get-source.sh
-Source3:	gen-changes.sh
 Source4:	Changes
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
