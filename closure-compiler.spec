@@ -1,18 +1,17 @@
 # NOTE:
-# - check release notes from here https://code.google.com/p/closure-compiler/wiki/Releases
+# - Check releases here: https://github.com/google/closure-compiler/wiki/Releases
 # TODO
 # - build from source (get-source.sh fetches it)
 
 %include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
 Name:		closure-compiler
-Version:	20140923
+Version:	20150505
 Release:	1
 License:	Apache v2.0
 Group:		Applications/WWW
-# Check releases here: https://github.com/google/closure-compiler/releases
 Source0:	http://dl.google.com/closure-compiler/compiler-%{version}.tar.gz
-# Source0-md5:	0aec94d4f36859ddc41083025a40dff3
+# Source0-md5:	dea8e282c316316daeb39fcd5708d369
 Source1:	%{name}.sh
 Source2:	get-source.sh
 Source4:	Changes
