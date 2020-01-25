@@ -4,7 +4,6 @@
 # - build from source (get-source.sh fetches it)
 
 %define		java_min_classdataversion 51.0
-%include	/usr/lib/rpm/macros.java
 Summary:	Closure Compiler - JavaScript compressor
 Name:		closure-compiler
 Version:	20161201
