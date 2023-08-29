@@ -5,6 +5,7 @@
 
 %define		java_min_classdataversion 51.0
 Summary:	Closure Compiler - JavaScript compressor
+Summary(pl.UTF-8):	Closure Compiler - kompresor JavaScriptu
 Name:		closure-compiler
 Version:	20161201
 Release:	2
@@ -30,6 +31,14 @@ dead code and rewrites and minimizes what's left. It also checks
 syntax, variable references, and types, and warns about common
 JavaScript pitfalls.
 
+%description -l pl.UTF-8
+Closure Compiler to narzędzie przyspieszające pobieranie i
+uruchamianie JavaScriptu. Jest to prawdziwy kompilator tego języka,
+ale zamiast kompilowania do kodu maszynowego, kompiluje JavaScript do
+lepszego JavaScriptu. Analizuje źródła, usuwa martwy kod i przepisuje
+pozostały, minimalizując go. Sprawdza także składnię, odwołania oraz
+typy zmiennych i ostrzega o najczęstszych pułapkach JavaScriptu.
+
 %prep
 %setup -qc
 cp -p %{SOURCE4} .
@@ -49,5 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.md Changes
-%attr(755,root,root) %{_bindir}/%{name}
-%{_javadir}/*.jar
+%attr(755,root,root) %{_bindir}/closure-compiler
+%{_javadir}/closure-compiler-%{version}.jar
+%{_javadir}/closure-compiler.jar
