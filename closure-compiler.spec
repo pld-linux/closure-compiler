@@ -18,7 +18,7 @@ Source2:	get-source.sh
 Source4:	Changes
 URL:		http://closure-compiler.appspot.com/
 BuildRequires:	rpm-javaprov
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
